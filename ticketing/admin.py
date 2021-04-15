@@ -1,5 +1,16 @@
 from django.contrib import admin
 
-from .models import Ticket
+from .models import Ticket, FollowUp, Status
 # Register your models here.
-admin.site.register(Ticket)
+
+class FollowUpInline(admin.TabularInline):
+	model=FollowUp
+	fields=['date','title', 'text', 'attachment']
+	readonly_fields=['date']
+	extra=1
+
+@admin.register(Ticket)
+class TicketAdmin(admin.ModelAdmin):
+	inlines=[FollowUpInline]
+
+admin.site.register(Status)

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Ticket, FollowUp, Status
+from .models import *
 # Register your models here.
 
 class FollowUpInline(admin.TabularInline):
@@ -14,3 +14,5 @@ class TicketAdmin(admin.ModelAdmin):
 	inlines=[FollowUpInline]
 
 admin.site.register(Status)
+admin.site.register(System)
+admin.site.register(Priority)

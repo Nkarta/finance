@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'finance.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'finance_nkarta',
+        'USER': 'nkarta',
+        'PASSWORD': 'vivarium2019',
+        'HOST': 'localhost',
+        'HOSTX': 'apps.nkartatx.com',
     }
 }
 
